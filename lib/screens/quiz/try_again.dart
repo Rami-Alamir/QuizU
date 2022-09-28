@@ -48,7 +48,8 @@ class TryAgain extends StatelessWidget {
                 padding: const EdgeInsets.symmetric(vertical: 100.0),
                 child: RoundedRectangleButton(
                     title: 'TRY AGAIN',
-                    onPressed: () => Navigator.of(context).pushNamed("/Quiz")),
+                    onPressed: () =>
+                        Navigator.of(context).pushReplacementNamed("/Quiz")),
               ),
             ],
           ),

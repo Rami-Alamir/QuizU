@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:quizu/screens/login/login.dart';
 import '../screens/home/home.dart';
+import '../screens/intro/intro.dart';
 import '../screens/login/username.dart';
 import '../screens/login/verify_otp.dart';
 import '../screens/quiz/quiz.dart';
@@ -17,6 +18,8 @@ class RouteGenerator {
         return MaterialPageRoute(builder: (_) => const Login());
       case '/Login':
         return MaterialPageRoute(builder: (_) => const Login());
+      case '/Intro':
+        return MaterialPageRoute(builder: (_) => const Intro());
       case '/Username':
         return MaterialPageRoute(builder: (_) => const Username());
       case '/VerifyOtp':

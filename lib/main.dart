@@ -16,11 +16,17 @@ Future<void> main() async {
   //get token then check it
   SharedPreferences prefs = await SharedPreferences.getInstance();
   String? token = prefs.getString('token');
+  bool? introStatus = prefs.getBool("intro") ?? true;
+
   bool tokenStatus = token != null
       ? await TokenRepository().tokenVerification(token) == 200
       : false;
 
   runApp(MultiProvider(
       providers: ProvidersList.providersList(),
-      child: App(token: token, tokenStatus: tokenStatus)));
+      child: App(
+        token: token,
+        tokenStatus: tokenStatus,
+        introStatus: introStatus,
+      )));
 }

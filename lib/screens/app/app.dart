@@ -7,8 +7,10 @@ import '../../utilities/route_generator.dart';
 
 class App extends StatefulWidget {
   final String? token;
+  final bool? introStatus;
   final bool? tokenStatus;
-  const App({Key? key, this.token, this.tokenStatus = false}) : super(key: key);
+  const App({Key? key, this.token, this.tokenStatus = false, this.introStatus})
+      : super(key: key);
 
   @override
   State<App> createState() => _AppState();
@@ -31,7 +33,11 @@ class _AppState extends State<App> {
       debugShowCheckedModeBanner: false,
       theme: AppTheme().appTheme,
       onGenerateRoute: RouteGenerator.generateRoute,
-      initialRoute: widget.tokenStatus! ? '/Home' : '/Login',
+      initialRoute: widget.introStatus!
+          ? "/Intro"
+          : widget.tokenStatus!
+              ? '/Home'
+              : '/Login',
     );
   }
 }
